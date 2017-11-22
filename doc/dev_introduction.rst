@@ -36,7 +36,11 @@ The directory also contains internal modules that are still under development:
   graphs
 - a :py:mod:`mapper <qiskit.mapper>` module for mapping all-to-all circuits to
   run on devices with fixed couplings
+<<<<<<< HEAD
 - a :py:mod:`backends <qiskit.backends>` module contains quantum circuit
+=======
+- a :py:mod:`simulators <qiskit.simulators>` module contains quantum circuit
+>>>>>>> origin/stable
   simulators
 - a *tools* directory contains methods for applications, analysis, and visualization
 
@@ -69,6 +73,7 @@ Several unroller backends and their outputs are summarized here:
 .. image:: ../images/unroller_backends.png
     :width: 600px
     :align: center
+<<<<<<< HEAD
 
 
 Logging
@@ -120,3 +125,5 @@ the messages. For example, if the module is `qiskit/some/module.py`:
    logger = logging.getLogger(__name__)  # logger for "qiskit.some.module"
    ...
    logger.info("This is an info message)
+=======
+>>>>>>> origin/stable

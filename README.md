@@ -1,11 +1,19 @@
 # Quantum Information Software Kit (QISKit)
 
+<<<<<<< HEAD
 [![PyPI](https://img.shields.io/pypi/v/qiskit.svg)](https://pypi.python.org/pypi/qiskit)
 [![Build Status](https://travis-ci.org/QISKit/qiskit-sdk-py.svg?branch=master)](https://travis-ci.org/QISKit/qiskit-sdk-py)
 
 The Quantum Information Software Kit (**QISKit** for short) is a software development kit (SDK) for working with [OpenQASM](https://github.com/QISKit/qiskit-openqasm) and the [IBM Q experience (QX)](https://quantumexperience.ng.bluemix.net/).
 
 Use **QISKit** to create quantum computing programs, compile them, and execute them on one of several backends (online Real quantum processors, online simulators, and local simulators). For the online backends, QISKit uses our [python API client](https://github.com/QISKit/qiskit-api-py) to connect to the IBM Q experience.
+=======
+[![Build Status](https://travis-ci.org/QISKit/qiskit-sdk-py.svg?branch=master)](https://travis-ci.org/QISKit/qiskit-sdk-py)
+
+The Quantum Information Software Kit (**QISKit** for short) is a software development kit (SDK) for working with [OpenQASM](https://github.com/QISKit/qiskit-openqasm) and the [IBM Q experience (QX)](https://quantumexperience.ng.bluemix.net/). 
+
+Use **QISKit** to create quantum computing programs, compile them, and execute them on one of several backends (online Real Quantum Processors, online Simulators, and local Simulators). For the online backends, QISKit uses our [python API client](https://github.com/QISKit/qiskit-api-py) to connect to the IBM Q experience. 
+>>>>>>> origin/stable
 
 **We use GitHub issues for tracking requests and bugs. Please see the** [IBM Q experience community](https://quantumexperience.ng.bluemix.net/qx/community) **for questions and discussion.** **If you'd like to contribute to QISKit, please take a look at our** [contribution guidelines](CONTRIBUTING.rst).
 
@@ -22,7 +30,11 @@ Links to Sections:
 ### Dependencies
 
 At least [Python 3.5 or later](https://www.python.org/downloads/) is needed for using QISKit. In addition, [Jupyter Notebooks](https://jupyter.readthedocs.io/en/latest/install.html) is recommended for interacting with the tutorials.
+<<<<<<< HEAD
 For this reason we recomend installing the [Anaconda 3](https://www.continuum.io/downloads) python distribution, as it comes with all of these dependencies pre-installed.
+=======
+For this reason we recomend installing [Anaconda 3](https://www.continuum.io/downloads) python distribution, as it comes with all of these dependencies pre-installed.
+>>>>>>> origin/stable
 
 In addition, a basic understanding of quantum information is very helpful when interacting with QISKit. If you're new to quantum, start with our [User Guides](https://github.com/QISKit/ibmqx-user-guides)!
 
@@ -34,7 +46,11 @@ For those more familiar with python, the fastest way to install QISKit is by usi
     pip install qiskit
 ```
 
+<<<<<<< HEAD
 ### Source Installation
+=======
+### Source Installation 
+>>>>>>> origin/stable
 
 An alternative method is to clone the QISKit SDK repository onto your local machine, and change into the cloned directory:
 
@@ -42,7 +58,11 @@ An alternative method is to clone the QISKit SDK repository onto your local mach
 
 Select the "Clone or download" button at the top of this webpage (or from the URL shown in the git clone command), unzip the file if needed, and change into **qiskit-sdk-py folder** in a terminal window.
 
+<<<<<<< HEAD
 #### Git download
+=======
+#### Git download 
+>>>>>>> origin/stable
 
 Or, if you have Git installed, run the following commands:
 
@@ -61,14 +81,21 @@ Now that the SDK is installed, it's time to begin working with QISKit.
 
 We are ready to try out some QASM examples, which runs via the local simulator.
 
+<<<<<<< HEAD
 This is a simple superposition example.
 
 ```python
+=======
+This is a simple superpesition example.
+
+```
+>>>>>>> origin/stable
 from qiskit import QuantumProgram
 
 # Creating Programs create your first QuantumProgram object instance.
 Q_program = QuantumProgram()
 
+<<<<<<< HEAD
 try:
   # Creating Registers create your first Quantum Register called "qr" with 2 qubits
   qr = Q_program.create_quantum_register("qr", 2)
@@ -103,25 +130,69 @@ In this case, the output will be (approximately due to random fluctuations):
 ```
 COMPLETED
 {'00': 509, '11': 515}
+=======
+# Creating Registers create your first Quantum Register called "qr" with 2 qubits
+qr = Q_program.create_quantum_register("qr", 2)
+# create your first Classical Register called "cr" with 2 bits
+cr = Q_program.create_classical_register("cr", 2)
+# Creating Circuits create your first Quantum Circuit called "qc" involving your Quantum Register "qr" # and your Classical Register "cr"
+qc = Q_program.create_circuit("superposition", [qr], [cr])
+
+# add the H gate in the Qubit 0, we put this Qubit in superposition
+qc.h(qr[0])
+
+# add measure to see the state
+qc.measure(qr, cr)
+
+# Compiled  and execute in the local_qasm_simulator
+
+result = Q_program.execute(["superposition"], backend='local_qasm_simulator', shots=1024)
+
+# Show the results
+print(result)
+print(result.get_data("superposition"))
+```
+
+In this case, the output will be:
+
+```
+COMPLETED
+{'00': 509, '11': 515} 
+>>>>>>> origin/stable
 ```
 
 You can also use QISKit to execute your code on a [real Quantum Chip](https://github.com/QISKit/ibmqx-backend-information).
 
  First, get your API token:
 
+<<<<<<< HEAD
 -  Create an [IBM Q experience](https://quantumexperience.ng.bluemix.net) account if you haven't already done so
 -  Get an API token from the IBM Q experience website under “My Account” > “Personal Access Token”
 
 This API token allows you to execute your programs with the IBM Q experience backends. [Example](doc/example_real_backend.rst).
 
 More details on this and more information see [our QISKit documentation](doc/qiskit.rst).
+=======
+-  Create an `IBM Q experience <https://quantumexperience.ng.bluemix.net>`__ account if you haven't already done so
+-  Get an API token from the IBM Q experience website under “My Account” > “Personal Access Token”
+
+This API token allows you to execute your programs into the IBM Q experience backends. [Example](doc/example_real_backend.rst).
+
+More details on this and more so in [our QISKit documentation](doc/qiskit.rst).
+>>>>>>> origin/stable
 
 
 ### Next Steps
 
+<<<<<<< HEAD
 Now you're set up and ready to check out some of the other examples from our [Tutorial](https://github.com/QISKit/qiskit-tutorial) repository. Start with the [index tutorial](https://github.com/QISKit/qiskit-tutorial/blob/master/index.ipynb) and then go to the [‘Getting Started’ example](https://github.com/QISKit/qiskit-tutorial/blob/002d054c72fc59fc5009bb9fa0ee393e15a69d07/1_introduction/getting_started.ipynb). If you already have [Jupyter Notebooks installed](https://jupyter.readthedocs.io/en/latest/install.html), you can copy and modify the notebooks to create your own experiments.
 
 To install the tutorials as part of the QISKit SDK, see the following [installation details](doc/install.rst#Install-Jupyter-based-tutorials). Complete SDK documentation can be found in the [*doc* directory](doc/qiskit.rst).
+=======
+Now you're set up and ready to check out some of the other examples from our [Tutorials](https://github.com/QISKit/qiskit-tutorial) repository. Start with the [index tutorial](https://github.com/QISKit/qiskit-tutorial/blob/master/index.ipynb) and then go to the [‘Getting Started’ example](https://github.com/QISKit/qiskit-tutorial/blob/002d054c72fc59fc5009bb9fa0ee393e15a69d07/1_introduction/getting_started.ipynb). If you already have [Jupyter Notebooks installed](https://jupyter.readthedocs.io/en/latest/install.html), you can copy and modify the notebooks to create your own experiments.
+
+To install the tutorials as part of the QISKit SDK, see the following installation details [installation details](doc/install.rst#Install-Jupyter-based-tutorials). Complete SDK documentation can be found in the [*doc* directory](doc/qiskit.rst).
+>>>>>>> origin/stable
 
 ## More Information
 

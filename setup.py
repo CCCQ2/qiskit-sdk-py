@@ -2,6 +2,7 @@ from setuptools import setup
 from qiskit import __version__
 
 
+
 packages = ["qiskit",
             "qiskit.dagcircuit",
             "qiskit.extensions",
@@ -27,7 +28,11 @@ requirements = ["IBMQuantumExperience>=1.8",
 
 setup(
     name="qiskit",
+<<<<<<< HEAD
     version=__version__,
+=======
+    version="0.3.8",
+>>>>>>> origin/stable
     description="Software for developing quantum computing programs",
     long_description="""QISKit is a software development kit for writing quantum
 computing experiments, programs, and applications. Works with Python 3.5 and 3.6""",
