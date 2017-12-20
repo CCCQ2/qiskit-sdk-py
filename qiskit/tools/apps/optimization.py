@@ -217,12 +217,17 @@ def group_paulis(pauli_list):
             # pauli_list_temp.extend(p_1) # this is going to signal the total
             # post-rotations of the set (set master)
 <<<<<<< HEAD
+<<<<<<< HEAD
             pauli_list_temp.append(p_1)
             pauli_list_temp.append(copy.deepcopy(p_1))
 =======
             pauli_list_temp.append(list(p_1))
             pauli_list_temp.append(copy.deepcopy(list(p_1)))
 >>>>>>> origin/stable
+=======
+            pauli_list_temp.append(list(p_1))
+            pauli_list_temp.append(copy.deepcopy(list(p_1)))
+>>>>>>> f27367120043d4fd50799be6b66cdb5180b5aaec
             pauli_list_temp[0][0] = 0
             for p_2 in pauli_list:
                 if p_2 not in pauli_list_sorted and p_1[1] != p_2[1]:
