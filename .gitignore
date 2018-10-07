@@ -1,6 +1,12 @@
 # SDK config file
 Qconfig.py
 
+# ply outputs
+qiskit/qasm/parser.out
+
+# editor files
+.vscode/
+
 #standard python ignores follow
 
 # Byte-compiled / optimized / DLL files
@@ -50,6 +56,9 @@ nosetests.xml
 coverage.xml
 *,cover
 .hypothesis/
+test/python/*.log
+test/python/*.pdf
+test/python/*.prof
 
 # Translations
 *.mo
@@ -99,6 +108,18 @@ ENV/
 .ropeproject
 
 
-*.xml
+dummyscripts/*
 
-*.iml
+token.json
+
+tutorial/rst/_build/*
+
+test/python/test_qasm_python_simulator.pdf
+
+doc/_build/*
+
+doc/_autodoc/*
+
+qiskit/bin/*
+
+test/python/test_save.json
